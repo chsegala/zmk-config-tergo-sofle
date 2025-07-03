@@ -40,17 +40,11 @@
 // Para teclas com tap-hold em que o hold é um modificador, como CTRL, ALT, etc
 
 &mt {
-    tapping-term-ms = <TAPPING_TERM>;
-    quick-tap-ms = <TAPPING_TERM>;
-    flavor = "balanced"; // Pode ser "balanced", "hold-preferred" ou "tap-preferred"
 };
 
 // Para teclas com tap-hold em que o hold é uma mudança de camada, como SYMB_NAV, MEDIA, etc
 
 &lt {
-    tapping-term-ms = <TAPPING_TERM>;
-    quick-tap-ms = <TAPPING_TERM>;
-    flavor = "balanced"; // Pode ser "balanced", "hold-preferred" ou "tap-preferred"
 };
 
 // Combos do teclado
@@ -73,6 +67,11 @@
             timeout-ms = <30>; // Tempo de tolerancia para apertar as teclas ao mesmo tempo
             key-positions = <50 59>; // primeira e última teclas da linha de teclas mais abaixo do teclado
             bindings = <&studio_unlock>; // Tecla a ser simulada ao apertar a combinação acima
+        };
+
+        escape-combo {
+            bindings = <&kp ESC>;
+            key-positions = <0 12>;
         };
     };
 };
@@ -100,11 +99,11 @@
         base_layer {
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2      &kp N3    &kp N4    &kp N5                                 &kp N6    &kp N7   &kp N8     &kp N9     &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W       &kp E     &kp R     &kp T                                  &kp Y     &kp U    &kp I      &kp O      &kp P     &kp BSPC
-&kp LSHFT  &kp A   &kp S       &kp D     &kp F     &kp G                                  &kp H     &kp J    &kp K      &kp L      &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z   &kp X       &kp C     &kp V     &kp B      &mo MEDIA       &mo ADJUST  &kp N     &kp M    &kp COMMA  &kp DOT    &kp FSLH  &kp ENTER
-                   &mo NUMPAD  &kp LGUI  &kp LALT  &kp SPACE  &mo SYMB_NAV    &kp ENTER   &kp BSPC  &kp DEL  &kp RGUI   &kp RCTRL
+&kp GRAVE       &kp N1  &kp N2       &kp N3        &kp N4        &kp N5                           &kp N6    &kp N7          &kp N8           &kp N9   &kp N0    &kp MINUS
+&kp TAB         &kp Q   &kp W        &kp E         &kp R         &kp T                            &kp Y     &kp U           &kp I            &kp O    &kp P     &kp BSLH
+&mt LSHFT CLCK  &kp A   &kp S        &kp D         &kp F         &kp G                            &kp H     &kp J           &kp K            &kp L    &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z   &kp X        &kp C         &kp V         &kp B   &mo 5        &mo ADJUST  &kp N     &kp M           &kp COMMA        &kp DOT  &kp FSLH  &kp EQUAL
+                        &tog NUMPAD  &kp LEFT_ALT  &kp LEFT_GUI  &sl 3   &kp ENTER    &kp SPACE   &kp BSPC  &kp LEFT_BRACE  &kp RIGHT_BRACE  &tog 3
             >;
 
             sensor-bindings =
@@ -143,11 +142,11 @@
         symb_nav_layer {
             display-name = "SymNv";
             bindings = <
-&trans  &kp F1         &kp F2        &kp F3         &kp F4        &kp F5                          &kp F6     &kp F7        &kp F8    &kp F9         &kp F10          &kp F11
-&trans  &kp GRAVE      &kp LS(N6)    &kp KP_PLUS    &kp LS(LBKT)  &kp LS(RBKT)                    &kp PG_UP  &kp HOME      &kp UP    &kp END        &kp INS          &kp F12
-&trans  &kp LS(GRAVE)  &kp EQUAL     &kp KP_MINUS   &kp LS(N9)    &kp LS(N0)                      &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &kp PSCRN        &none
-&trans  &kp NUBS       &kp LS(NUBS)  &kp LS(MINUS)  &kp LBKT      &kp RBKT      &trans    &trans  &kp CAPS   &kp LC(LEFT)  &kp ESC   &kp LC(RIGHT)  &kp PAUSE_BREAK  &none
-                       &trans        &trans         &trans        &trans        &trans    &trans  &trans     &trans        &trans    &trans
+&trans  &kp F1         &kp F2        &kp F3         &kp F4        &kp F5                          &kp F6      &kp F7        &kp F8    &kp F9         &kp F10    &kp F11
+&trans  &kp GRAVE      &kp LS(N6)    &kp KP_PLUS    &kp LS(LBKT)  &kp LS(RBKT)                    &kp PG_UP   &kp HOME      &kp UP    &kp END        &kp INS    &kp F12
+&trans  &kp LS(GRAVE)  &kp EQUAL     &kp KP_MINUS   &kp LS(N9)    &kp LS(N0)                      &kp PG_DN   &kp LEFT      &kp DOWN  &kp RIGHT      &kp PSCRN  &none
+&trans  &kp NUBS       &kp LS(NUBS)  &kp LS(MINUS)  &kp LBKT      &kp RBKT      &trans    &trans  &kp CAPS    &kp LC(LEFT)  &kp ESC   &kp LC(RIGHT)  &none      &none
+                       &trans        &trans         &trans        &tog 3        &trans    &trans  &kp DELETE  &trans        &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
