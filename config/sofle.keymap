@@ -72,16 +72,6 @@
             bindings = <&kp ESC>;
             key-positions = <0 12>;
         };
-
-        combo_toggle_sym {
-            bindings = <&tog 3>;
-            key-positions = <54 59>;
-        };
-
-        combo_toggle_num {
-            bindings = <&tog 6>;
-            key-positions = <59 50>;
-        };
     };
 };
 
@@ -168,7 +158,7 @@
 &none           &none         &none         &none         &none         &none                           &none   &none   &bt BT_CLR_ALL  &none   &none  &none
 &none           &none         &none         &out OUT_TOG  &none         &none                           &none   &none   &bt BT_CLR      &none   &none  &none
 &bootloader     &none         &to 0         &to 1         &to 2         &none         &trans    &trans  &none   &none   &none           &none   &none  &bootloader
-                              &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans          &trans
+                              &tog 6        &trans        &trans        &trans        &tog 3    &trans  &trans  &trans  &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
