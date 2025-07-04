@@ -42,6 +42,7 @@
 &mt {
     flavor = "balanced";
     tapping-term-ms = <300>;
+    quick-tap-ms = <(-1)>;
 };
 
 // Para teclas com tap-hold em que o hold é uma mudança de camada, como SYMB_NAV, MEDIA, etc
