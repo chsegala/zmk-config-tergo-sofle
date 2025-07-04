@@ -39,8 +39,7 @@
 
 // Para teclas com tap-hold em que o hold é um modificador, como CTRL, ALT, etc
 
-&mt {
-};
+&mt { flavor = "tap-unless-interrupted"; };
 
 // Para teclas com tap-hold em que o hold é uma mudança de camada, como SYMB_NAV, MEDIA, etc
 
@@ -69,7 +68,7 @@
             bindings = <&studio_unlock>; // Tecla a ser simulada ao apertar a combinação acima
         };
 
-        escape-combo {
+        combo_scape {
             bindings = <&kp ESC>;
             key-positions = <0 12>;
         };
