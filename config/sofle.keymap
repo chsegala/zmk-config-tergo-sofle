@@ -130,7 +130,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
+                <&inc_dec_kp C_BRI_DEC C_BRI_INC>;
         };
 
         adept_layer {
